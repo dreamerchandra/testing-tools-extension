@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Test Case Helper",
+  "version": "1.0.0",
+  "description": "Chrome extension to assist with writing test cases by highlighting and extracting element selectors",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Test Case Helper"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "commands": {
+    "toggle-inspector": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+I",
+        "mac": "Command+Shift+I"
+      },
+      "description": "Toggle element inspector"
+    },
+    "toggle-popup-mode": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+M",
+        "mac": "Command+Shift+M"
+      },
+      "description": "Toggle popup position mode"
+    },
+    "copy-selector": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Copy current element selector"
+    },
+    "toggle-lock": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Lock current element"
+    }
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}

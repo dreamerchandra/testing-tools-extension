@@ -1,0 +1,326 @@
+#test-helper-popup {
+  position: fixed;
+  z-index: 10000;
+  background: white;
+  border: 2px solid #007acc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  min-width: 300px;
+  max-width: 500px;
+  display: none;
+  pointer-events: auto;
+}
+
+#test-helper-popup.cursor-following {
+  pointer-events: none;
+}
+
+#test-helper-popup.cursor-following .popup-actions {
+  pointer-events: auto;
+}
+
+#test-helper-popup .popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007acc;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+}
+
+#test-helper-popup .lock-status {
+  background: rgba(255, 107, 107, 0.9);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+#test-helper-popup .popup-actions {
+  display: flex;
+  gap: 4px;
+}
+
+#test-helper-popup .popup-actions button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 10px;
+  transition: background 0.2s;
+}
+
+#test-helper-popup .popup-actions button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#test-helper-popup .popup-content,
+#test-helper-popup .popup-settings {
+  padding: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#test-helper-popup .element-tree {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#test-helper-popup .tree-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  word-break: break-word;
+}
+
+#test-helper-popup .tree-item.parent {
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+#test-helper-popup .tree-item.current {
+  background: rgba(0, 122, 204, 0.1);
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 1px 0;
+}
+
+#test-helper-popup .tree-item.child {
+  opacity: 0.7;
+  font-size: 11px;
+}
+
+#test-helper-popup .tree-item.hoverable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#test-helper-popup .tree-item.hoverable:hover {
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 4px;
+}
+
+#test-helper-popup .tree-item.hoverable:active {
+  background: rgba(255, 152, 0, 0.2);
+  transform: translateY(1px);
+}
+
+#test-helper-popup .nav-arrow {
+  margin-left: auto;
+  color: #007acc;
+  font-size: 12px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+#test-helper-popup .tree-item.hoverable:hover .nav-arrow {
+  opacity: 1;
+  color: #ff9800;
+}
+
+#test-helper-popup .tree-indent {
+  color: #999;
+  font-size: 10px;
+  min-width: 20px;
+  font-family: monospace;
+}
+
+#test-helper-popup .tag {
+  background: #e8f4f8;
+  color: #006699;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+#test-helper-popup .current-tag {
+  font-weight: 700;
+  background: #d4eaff;
+  color: #004d99;
+}
+
+#test-helper-popup .selector {
+  background: #f0f8f0;
+  color: #006600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  word-break: break-all;
+}
+
+#test-helper-popup .current-selector {
+  font-weight: 700;
+  background: #e8f5e8;
+  color: #004d00;
+}
+
+#test-helper-popup .text {
+  background: #fff8e1;
+  color: #cc6600;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-style: italic;
+  font-size: 11px;
+}
+
+#test-helper-popup .current-text {
+  font-weight: 600;
+  background: #fff3d0;
+  color: #b35900;
+}
+
+#test-helper-popup code {
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  display: block;
+  margin-top: 4px;
+  word-break: break-all;
+  border: 1px solid #ddd;
+}
+
+#test-helper-popup .setting-group {
+  margin-bottom: 16px;
+}
+
+#test-helper-popup .setting-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+#test-helper-popup .selector-dropdown {
+  width: 120px;
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-right: 8px;
+}
+
+#test-helper-popup .remove-selector {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+#test-helper-popup .remove-selector:hover {
+  background: #cc3333;
+}
+
+#test-helper-popup #save-settings-btn {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+#test-helper-popup #save-settings-btn:hover {
+  background: #005a99;
+}
+
+#test-helper-popup input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+#test-helper-popup textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+#test-helper-popup .function-help {
+  margin-top: 8px;
+}
+
+#test-helper-popup .function-help > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+#test-helper-popup .function-help small {
+  color: #666;
+  font-style: italic;
+}
+
+#test-helper-popup .function-help button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 9px;
+  min-width: 50px;
+}
+
+#test-helper-popup .function-help button:hover {
+  background: #5a6268;
+}
+
+#test-helper-popup #test-function-btn {
+  background: #28a745;
+}
+
+#test-helper-popup #test-function-btn:hover {
+  background: #218838;
+}
+
+.test-helper-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10001;
+  background: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideInBottom 0.3s ease-out;
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
